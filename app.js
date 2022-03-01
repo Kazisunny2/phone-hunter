@@ -1,11 +1,19 @@
 const allPhones = () =>{ 
     document.getElementById("phone-container").innerHTML= "";
+    document.getElementById("error-message").innerHTML= "";
     const searchValue = document.getElementById("search-box").value;
     const url = `https://openapi.programming-hero.com/api/phones?search=${searchValue}`;
     //console.log(url);
     fetch(url)
     .then((response) => response.json())
-    .then((data) => showPhoneDetails(data.data));
+    .then((data) =>{
+        if(data.data == false){
+            document.getElementById("error-message").innerHTML=`<h3>No Phone Found</h3>`  
+        }
+        else{
+            showPhoneDetails(data.data);
+        }
+    }) 
 }
 const showPhoneDetails = (phones) => {
  for(const phone of phones){
