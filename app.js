@@ -11,7 +11,9 @@ const showPhoneDetails = (phones) => {
  for(const phone of phones){
     const parent = document.getElementById('phone-container')
     const div = document.createElement('div');
-    div.innerHTML = ` <div class="card border grid p-2 py-5 m-3">
+    div.classList.add('col');
+    div.innerHTML = ` <div>
+    <div class="card border grid p-2 py-5 m-3">
     <div class="pro-pic">
         <img class="w-50" src="${phone.image}" alt="">
     </div>
@@ -21,7 +23,8 @@ const showPhoneDetails = (phones) => {
         <button class="btn btn-danger">Others</button>
         <button onclick="details('${phone.slug}')" class="btn btn-success">Details</button>
     </div>
-</div>`
+</div>
+    </div> `
     parent.appendChild(div)
  }
 }
@@ -30,4 +33,4 @@ const details = (info) => {
    fetch(url)
    .then((response) => response.json())
    .then((data) => showPhoneDetails(data));
-}
+} 
