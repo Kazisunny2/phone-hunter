@@ -7,14 +7,13 @@ const allPhones = () =>{
     .then((response) => response.json())
     .then((data) => showPhoneDetails(data.data));
 }
-
 const showPhoneDetails = (phones) => {
  for(const phone of phones){
     const parent = document.getElementById('phone-container')
     const div = document.createElement('div');
     div.classList.add('col');
     div.innerHTML = ` <div>
-    <div class="card border p-2 py-3 m-3">
+    <div class="card border p-1 m-3">
     <div>
         <img class="w-50" src="${phone.image}" alt="">
     </div>
