@@ -58,7 +58,7 @@ const setDetails = (info) => {
         <h5>Sensors: ${info.mainFeatures.sensors||'Info will provide soon'}</h5>
         <h3 class"fw-bold">Others Information</h3>
         <h5>Wlan: ${info?.others?.WLAN||'Info will provide soon'}</h5>
-        <h5>Bluetooth": ${info?.others?.Bluetooth||'Info will provide soon'}</h5>
+        <h5>Bluetooth: ${info?.others?.Bluetooth||'Info will provide soon'}</h5>
         <h5>GPS: ${info?.others?.GPS||'Info will provide soon'}</h5>
         <h5>NFC: ${info?.others?.NFC||'Info will provide soon'}</h5>
         <h5>Radio: ${info?.others?.Radio||'Info will provide soon'}</h5>
